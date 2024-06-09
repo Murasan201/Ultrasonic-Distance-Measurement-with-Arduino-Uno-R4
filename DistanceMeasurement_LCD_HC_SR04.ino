@@ -1,35 +1,4 @@
 
-# Ultrasonic Distance Measurement with Arduino Uno R4 and LCD Display
-
-This project demonstrates how to use an ultrasonic distance sensor (HC-SR04) with an Arduino Uno R4 Minima and an I2C-connected LCD1602 display to measure and display distance in real-time.
-
-## Components
-- Arduino Uno R4 Minima
-- Ultrasonic Distance Sensor (HC-SR04)
-- LCD1602 Display (I2C interface)
-- Jumper wires
-- Breadboard
-
-## Circuit Diagram
-
-### HC-SR04 to Arduino Connections
-- VCC to 5V
-- GND to GND
-- Trig to Digital Pin 4
-- Echo to Digital Pin 3
-
-### LCD1602 to Arduino Connections
-- VCC to 5V
-- GND to GND
-- SDA to A4
-- SCL to A5
-
-## Library Dependencies
-This project uses the `hd44780` library for the LCD display. You can install it via the Arduino Library Manager.
-
-## Arduino Sketch
-
-```cpp
 #include <Wire.h>
 #include <hd44780.h>  // Main hd44780 header
 #include <hd44780ioClass/hd44780_I2Cexp.h> // i/o class header
@@ -81,11 +50,3 @@ float readDistance() {
   float distance = pulseIn(ECHO_PIN, HIGH) / 58.00;  // Formula: (340m/s * 1us) / 2
   return distance;
 }
-```
-
-## Author
-Murasan  
-[Website](https://murasan-net.com/)
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
